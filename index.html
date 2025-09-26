@@ -15,11 +15,25 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e, #0f1419, #1a1a2e);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
             color: white;
             overflow-x: hidden;
             opacity: 0;
             transition: opacity 0.8s ease-in-out;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         body.loaded {
@@ -81,10 +95,28 @@
             font-size: 1.1rem;
             line-height: 1.6;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease-out 0.8s forwards;
+        }
+
+        .status-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 0.5rem 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out 0.9s forwards;
+        }
+
+        .status-badge span {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+            letter-spacing: 0.05em;
         }
 
         .tech-stack {
@@ -207,7 +239,11 @@
                 software to model dart trajectories and provide immediate feedback.</p>
         </div>
 
-        <div class="tech-stack">
+        <!-- <div class="status-badge">
+            <span>Product Currently Under Development</span>
+        </div> -->
+
+        <!-- <div class="tech-stack">
             <div class="tech-item">
                 <h3>TDS</h3>
                 <p>Tethered Dart System</p>
@@ -220,7 +256,7 @@
                 <h3>RLD</h3>
                 <p>Reactive Light Dartboard</p>
             </div>
-        </div>
+        </div> -->
 
         <div class="cta-section">
             <a href="mailto:team@flightlessdarts.com" class="cta-button">Experience the Future of Darts</a>
